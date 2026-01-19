@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@react-three/fiber": "^9.5.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "gsap": "^3.14.2",
+    "tailwindcss": "^4.1.18",
+    "three": "^0.182.0"
+  }
+}
