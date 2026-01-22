@@ -4,70 +4,59 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative py-24 bg-[#0b0f1a] text-gray-300"
+      className="relative py-28 from-black via-slate-900 to-black text-gray-200"
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
-        {/* Section Heading */}
-        <h2
-          className="text-3xl md:text-4xl font-extrabold text-center mb-12
-          bg-gradient-to-r from-blue-400 to-purple-600
-          bg-clip-text text-transparent"
-        >
-          About Me
-        </h2>
+        {/* Photo Section */}
+        <div className="relative flex justify-center">
+          {/* Glow */}
+          <div className="absolute -inset-6 rounded-full bg-sky-500/20 blur-3xl" />
 
-        {/* Glass Card */}
-        <div
-          className="bg-white/5 backdrop-blur-xl border border-white/10
-          rounded-2xl p-8 md:p-12 shadow-xl shadow-black/40"
-        >
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-
-            {/* Text */}
-            <div className="space-y-6 text-lg leading-relaxed">
-              <p>
-                Hi, I’m <span className="text-white font-semibold">Vishnudev Jayakumar</span>,
-                a passionate <span className="text-blue-400">Python Full Stack Developer</span>
-                who loves building clean, scalable, and user-focused web applications.
-              </p>
-
-              <p>
-                I work with modern technologies to create fast, responsive,
-                and visually engaging digital experiences. From backend logic
-                to pixel-perfect UI, I enjoy turning ideas into real-world products.
-              </p>
-
-              <p>
-                I’m always learning, experimenting, and improving—whether it’s
-                exploring new frameworks, optimizing performance, or refining UX.
-              </p>
-            </div>
-
-            {/* Skills / Highlights */}
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                "Python & Django",
-                "React & Tailwind",
-                "REST APIs",
-                "MongoDB / SQL",
-                "Authentication",
-                "Responsive UI",
-              ].map((skill) => (
-                <div
-                  key={skill}
-                  className="px-4 py-3 rounded-xl text-center
-                  bg-black/40 border border-white/10
-                  hover:border-blue-500/50 hover:text-white
-                  transition"
-                >
-                  {skill}
-                </div>
-              ))}
-            </div>
-
+          <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border border-white/20 shadow-2xl">
+            <img
+              src="/profile.jpg"
+              alt="Vishnudev"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
+
+        {/* Content */}
+        <div>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+            About <span className="text-sky-400">Me</span>
+          </h2>
+
+          <p className="text-gray-400 leading-relaxed mb-6">
+            I’m <span className="text-gray-200 font-semibold">Vishnudev</span>, a
+            passionate <span className="text-sky-400">Full-Stack Developer</span>{" "}
+            who loves building clean, modern, and scalable web applications.
+            I focus on performance, UI/UX, and real-world problem solving.
+          </p>
+
+          <p className="text-gray-400 leading-relaxed mb-8">
+            I work mainly with React, Tailwind CSS, Django, and modern JavaScript
+            tools to create engaging digital experiences.
+          </p>
+
+          <div className="flex gap-4">
+            <a
+              href="#contact"
+              className="px-6 py-3 rounded-xl bg-sky-400 text-black font-semibold hover:bg-sky-500 transition"
+            >
+              Contact Me
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              className="px-6 py-3 rounded-xl border border-sky-400 text-sky-400 font-semibold hover:bg-sky-400 hover:text-black transition"
+            >
+              Download CV
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
   );

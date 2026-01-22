@@ -1,57 +1,86 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const projects = [
   {
     title: "Petmart",
-    description:"PetMart is a full-stack e-commerce web application designed for purchasing pet products such as food, accessories, and care essentials. The platform focuses on delivering a smooth shopping experience with secure authentication, cart management, and order processing.",
+    description:
+      "PetMart is a full-stack e-commerce web application designed for purchasing pet products such as food, accessories, and care essentials. The platform focuses on delivering a smooth shopping experience with secure authentication, cart management, and order processing.",
     tech: ["HTML", "CSS", "Python", "Django"],
     link: "#",
   },
   {
     title: "Book My Show",
     description:
-"BookMyShow Clone is a full-stack web application that replicates the core functionality of an online movie ticket booking platform. It allows users to discover movies, select showtimes, choose seats, and book tickets through an intuitive and responsive interface.",
-    tech: ["HTML", "CSS","Python", "Django"],
+      "BookMyShow Clone is a full-stack web application that replicates the core functionality of an online movie ticket booking platform. It allows users to discover movies, select showtimes, choose seats, and book tickets through an intuitive and responsive interface.",
+    tech: ["HTML", "CSS", "Python", "Django"],
     link: "#",
   },
   {
     title: "Gallery Vault",
     description:
-"Gallery Vault is a secure web application designed to store, organize, and protect personal images and media files. The platform focuses on privacy, authentication, and controlled access, allowing users to safely manage their digital gallery.",
-    tech: ["HTML", "CSS","Python", "Django"],
+      "Gallery Vault is a secure web application designed to store, organize, and protect personal images and media files. The platform focuses on privacy, authentication, and controlled access, allowing users to safely manage their digital gallery.",
+    tech: ["HTML", "CSS", "Python", "Django"],
     link: "#",
   },
 ];
 
+// Animation Variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  show: { opacity: 1, y: 0 },
+};
+
 const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="relative py-24 bg-[#0b0f1a] text-gray-300"
-    >
+    <section id="projects" className="relative py-24 text-gray-300">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-        <h2
-          className="text-3xl md:text-4xl font-extrabold text-center mb-16
-          bg-gradient-to-r from-blue-400 to-purple-600
-          bg-clip-text text-transparent"
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="
+            text-3xl md:text-4xl font-extrabold text-center mb-16
+            bg-gradient-to-r from-blue-400 to-purple-600
+            bg-clip-text text-transparent
+          "
         >
           Projects
-        </h2>
+        </motion.h2>
 
         {/* Project Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8"
+        >
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={cardVariants}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 200 }}
               className="
                 bg-white/5 backdrop-blur-xl
                 border border-white/10
                 rounded-2xl p-6
                 shadow-xl shadow-black/40
-                hover:-translate-y-2 hover:border-blue-500/50
+                hover:border-blue-500/50
                 transition-all duration-300
               "
             >
@@ -91,13 +120,13 @@ const Projects = () => {
               >
                 View Project →
               </a>
-            </div>
+            </motion.div>
           ))}
-
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default Projects;
+
