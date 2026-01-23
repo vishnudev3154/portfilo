@@ -34,7 +34,7 @@ const Footer = () => {
         {/* Right */}
         <div className="flex gap-4">
           <a
-            href="https://github.com/"
+            href="https://github.com/vishnudev3154"
             target="_blank"
             rel="noreferrer"
             className="hover:text-sky-400 transition"
@@ -42,7 +42,7 @@ const Footer = () => {
             GitHub
           </a>
           <a
-            href="https://linkedin.com/"
+            href="https://www.linkedin.com/in/vishnudev-jayakumar-970400381/"
             target="_blank"
             rel="noreferrer"
             className="hover:text-sky-400 transition"
