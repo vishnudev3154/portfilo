@@ -15,7 +15,7 @@ const About = () => {
 
           <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border border-white/20 shadow-2xl">
             <img
-              src="/profile.jpg"
+              src="/vishnudev.jpeg"
               alt="Vishnudev"
               className="w-full h-full object-cover"
             />
@@ -54,7 +54,7 @@ const About = () => {
             </a>
 
             <a
-              href="/vishnudevcv.pdf"
+              href="/VISHNUDEVCV.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-xl border border-sky-400 text-sky-400 font-semibold hover:bg-sky-400 hover:text-black transition"
